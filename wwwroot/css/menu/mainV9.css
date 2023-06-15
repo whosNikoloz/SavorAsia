@@ -68,9 +68,9 @@ nav .navbar-top {
 
 .navbar-top .logo {
     position: absolute;
-    top: 30px;
+    top: 11px;
     left: 100px;
-    width: 150px;
+    width: auto;
     height: 75px;
     color:white;
 }
@@ -656,7 +656,8 @@ main {
     }
 
     .navbar-top .logo {
-        width: 100px;
+        width: 60px;
+        height:auto;
         float: left;
         left: 40px;
         margin-bottom:70px;

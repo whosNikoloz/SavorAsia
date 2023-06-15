@@ -5,8 +5,8 @@
       "PackagePath": "staticwebassets\\SavorAsia.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\css\\adminaddV2.css",
-      "PackagePath": "staticwebassets\\css\\adminaddV2.css"
+      "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\css\\Admin\\adminadd.css",
+      "PackagePath": "staticwebassets\\css\\Admin\\adminadd.css"
     },
     {
       "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\css\\footer.css",
@@ -33,8 +33,8 @@
       "PackagePath": "staticwebassets\\css\\manageacc.css"
     },
     {
-      "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\css\\menu\\mainV8.css",
-      "PackagePath": "staticwebassets\\css\\menu\\mainV8.css"
+      "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\css\\menu\\mainV9.css",
+      "PackagePath": "staticwebassets\\css\\menu\\mainV9.css"
     },
     {
       "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\css\\menu\\product.css",
@@ -43,6 +43,14 @@
     {
       "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\images\\LogoWhite.png",
+      "PackagePath": "staticwebassets\\images\\LogoWhite.png"
+    },
+    {
+      "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\images\\icon2.png",
+      "PackagePath": "staticwebassets\\images\\icon2.png"
     },
     {
       "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\images\\index(home)\\Aboutimg.png",

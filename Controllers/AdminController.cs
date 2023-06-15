@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.DotNet.Scaffolding.Shared.Project;
 using SavorAsia.Data;
 using SavorAsia.Models;
 using SavorAsia.Models.Menu;
@@ -103,6 +104,10 @@ namespace SavorAsia.Controllers
         [HttpGet]
         public async Task<IActionResult> Index(string item)
         {
+            if(item == null)
+            {
+                item = "Noodles";
+            }
             ItemViewModel viewModel = new ItemViewModel();
             var items = await GetItemsAsync(item);
             switch (item)
@@ -195,12 +200,267 @@ namespace SavorAsia.Controllers
 
 
 
+
+
+
+
+        //Edit !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        [HttpGet]
+        public IActionResult Edit(int productid,int categoryid)
+        {
+            /*
+             Noodles = 0;
+            Rice = 1;
+            Drinks =2;
+            Ramen = 3;
+             */
+
+            switch (categoryid)
+            {
+                case 0:
+                    var noodles = db.Noodles.Find(productid);
+                    var Noodlemodel = new ItemModel
+                    {
+                        Price = noodles.Price,
+                        CategoryId= noodles.CategoryId,
+                        Id = noodles.Id,
+                        Description = noodles.Description,
+                        Data = noodles.Data,
+                        Name = noodles.Name,
+                    };
+                    return View(Noodlemodel);
+                case 1:
+                    var rice = db.Noodles.Find(productid);
+                    var Ricemodel = new ItemModel
+                    {
+                        Price = rice.Price,
+                        CategoryId = rice.CategoryId,
+                        Id = rice.Id,
+                        Description = rice.Description,
+                        Data = rice.Data,
+                        Name = rice.Name,
+                    };
+                    return View(Ricemodel);
+                case 2:
+                    var drink = db.Noodles.Find(productid);
+                    var Drinkmodel = new ItemModel
+                    {
+                        Price = drink.Price,
+                        CategoryId = drink.CategoryId,
+                        Id = drink.Id,
+                        Description = drink.Description,
+                        Data = drink.Data,
+                        Name = drink.Name,
+                    };
+                    return View(Drinkmodel);
+                case 3:
+                    var ramen = db.Noodles.Find(productid);
+                    var Ramenmodel = new ItemModel
+                    {
+                        Price = ramen.Price,
+                        CategoryId = ramen.CategoryId,
+                        Id = ramen.Id,
+                        Description = ramen.Description,
+                        Data = ramen.Data,
+                        Name = ramen.Name,
+                    };
+                    return View(Ramenmodel);
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(ItemModel model)
+        {
+            /*
+             Noodles = 0;
+            Rice = 1;
+            Drinks =2;
+            Ramen = 3;
+             */
+            switch (model.CategoryId)
+            {
+                case 0:
+                    var noodles = await db.Noodles.FindAsync(model.Id);
+                    if(noodles != null)
+                    {
+                        noodles.Price = model.Price;
+                        noodles.Description = model.Description;
+                        noodles.Data = model.Data;
+                        noodles.Name = model.Name;
+                        noodles.Id = model.Id;
+                        noodles.CategoryId = model.CategoryId;
+                    }
+                    else
+                    {
+                        throw new Exception("noodles not found");
+                    }
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                case 1:
+                    var rice = await db.Rice.FindAsync(model.Id);
+                    if (rice != null)
+                    {
+                        rice.Price = model.Price;
+                        rice.Description = model.Description;
+                        rice.Data = model.Data;
+                        rice.Name = model.Name;
+                        rice.Id = model.Id;
+                        rice.CategoryId = model.CategoryId;
+                    }
+                    else
+                    {
+                        throw new Exception("rice not found");
+                    }
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                case 2:
+                    var drink = await db.Drinks.FindAsync(model.Id);
+                    if (drink != null)
+                    {
+                        drink.Price = model.Price;
+                        drink.Description = model.Description;
+                        drink.Data = model.Data;
+                        drink.Name = model.Name;
+                        drink.Id = model.Id;
+                        drink.CategoryId = model.CategoryId;
+                    }
+                    else
+                    {
+                        throw new Exception("drink not found");
+                    }
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                case 3:
+                    var ramen = await db.Ramen.FindAsync(model.Id);
+                    if (ramen != null)
+                    {
+                        ramen.Price = model.Price;
+                        ramen.Description = model.Description;
+                        ramen.Data = model.Data;
+                        ramen.Name = model.Name;
+                        ramen.Id = model.Id;
+                        ramen.CategoryId = model.CategoryId;
+                    }
+                    else
+                    {
+                        throw new Exception("Ramen not found");
+                    }
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
+
+        }
+
+
+        //Delete !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(ItemModel model)
+        {
+            /*
+             Noodles = 0;
+            Rice = 1;
+            Drinks =2;
+            Ramen = 3;
+             */
+            switch (model.CategoryId)
+            {
+                case 0:
+                    var noodles = await db.Noodles.FindAsync(model.Id);
+                    if(noodles != null)
+                    {
+                        db.Noodles.Remove(noodles);
+                        await db.SaveChangesAsync();
+                    }
+                    return RedirectToAction("Index");
+                case 1:
+                    var rice = await db.Rice.FindAsync(model.Id);
+                    if (rice != null)
+                    {
+                        db.Rice.Remove(rice);
+                        await db.SaveChangesAsync();
+                    }
+                    return RedirectToAction("Index");
+                case 2:
+                    var drink = await db.Drinks.FindAsync(model.Id);
+                    if (drink != null)
+                    {
+                        db.Drinks.Remove(drink);
+                        await db.SaveChangesAsync();
+                    }
+                    return RedirectToAction("Index");
+                case 3:
+                    var ramen = await db.Ramen.FindAsync(model.Id);
+                    if (ramen != null)
+                    {
+                        db.Ramen.Remove(ramen);
+                        await db.SaveChangesAsync();
+                    }
+                    return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
+        }
+
+
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int productid, int categoryid)
+        {
+            /*
+             Noodles = 0;
+            Rice = 1;
+            Drinks =2;
+            Ramen = 3;
+             */
+            switch (categoryid)
+            {
+                case 0:
+                    var noodles = await db.Noodles.FindAsync(productid);
+                    if (noodles != null)
+                    {
+                        db.Noodles.Remove(noodles);
+                        await db.SaveChangesAsync();
+                    }
+                    return RedirectToAction("Index");
+                case 1:
+                    var rice = await db.Rice.FindAsync(productid);
+                    if (rice != null)
+                    {
+                        db.Rice.Remove(rice);
+                        await db.SaveChangesAsync();
+                    }
+                    return RedirectToAction("Index");
+                case 2:
+                    var drink = await db.Drinks.FindAsync(productid);
+                    if (drink != null)
+                    {
+                        db.Drinks.Remove(drink);
+                        await db.SaveChangesAsync();
+                    }
+                    return RedirectToAction("Index");
+                case 3:
+                    var ramen = await db.Ramen.FindAsync(productid);
+                    if (ramen != null)
+                    {
+                        db.Ramen.Remove(ramen);
+                        await db.SaveChangesAsync();
+                    }
+                    return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
+        }
+
+
+
+        //Add Items !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         public IActionResult AddItem()
         {
             return View();
         }
-
-
 
         [HttpPost]
         public async Task<IActionResult> AddItem(IFormFile image, ItemModel Model,int item)

@@ -2,36 +2,36 @@
 
 
 @{
-    Layout = "_LayoutNoFooter";
+    Layout = "_Layout";
 }
 
 <head>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
-    <link rel="stylesheet" href="/css/adminaddV2.css">
+    <link href="~/css/admin/adminadd.css" rel="stylesheet" />
     <link href="c:\users\nikol\source\repos\savorasia\savorasia\wwwroot\css\adminaddv2.css" rel="stylesheet" />
 </head>
 <form method="post" enctype="multipart/form-data">
     <div class="admin-panel">
-        <h2>დაამატე Pizza</h2>
+        <h2>Add Product</h2>
         <form>
             <div class="form-group">
-                <label for="pizza-img">პიცის ფოტო</label>
+                <label >Product Image</label>
                 <input type="file" name="image" id="image" style="width: 300px" accept="image/*" onchange="previewImage(event)">
                 <img id="preview" src="" alt="Preview" style="width: 300px" />
                 <span id="image-error" style="color: red;"></span>
             </div>
             <div class="form-group">
-                <label for="pizza-name">პიცის სახელი</label>
+                <label for="item-name">Product Name</label>
                 <input type="text" name="Name" id="Name" required style="width: 300px;">
             </div>
             <div class="form-group">
-                <label for="pizza-price">პიცის ფასი</label>
+                <label >Product Price</label>
                 <input type="text" name="Price" id="Price" required style="width: 100px;">
             </div>
 
             <div class="form-group">
-                <label for="pizza-description">აღწერა</label>
+                <label >Description</label>
                 <textarea name="Description" id="Description" required style="width: 340px;"></textarea>
             </div>
 
@@ -42,7 +42,7 @@
                 <option value=3>Ramen</option>
             </select>
             
-            <button class="add-pizza-button">დამატება</button>
+            <button class="custombtn">Add</button>
         </form>
     </div>
 </form>

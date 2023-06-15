@@ -9,17 +9,16 @@
 }
 
 .admin-panel {
-    margin-bottom:200px;
     position: relative;
     padding: 20px;
     border-radius: 10px;
     width: 90%;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 40px auto 150px;
     overflow: hidden;
-    background-color: rgba(1, 99, 70, 0.438);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background-color: #3586ff;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -54,20 +53,46 @@ input[type="checkbox"] {
     margin-right: 5px;
 }
 
-button[type="submit"],
-.add-pizza-button {
-    background-color: yellow;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+.custombtn {
+    margin: 0 9px;
+    padding: 8px 9px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
 }
 
-    button[type="submit"]:hover,
-    .add-pizza-button:hover {
-        background-color: #ddd;
+    .custombtn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        border-radius: 15px;
+        background-color: #212121;
+        z-index: -1;
+        -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+        box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+        transition: all 250ms
     }
+
+    .custombtn:hover {
+        color: #e8e8e8;
+    }
+
+        .custombtn:hover::before {
+            width: 100%;
+        }
+
 
 @keyframes fadeIn {
     0% {
@@ -141,18 +166,6 @@ button[type="submit"],
     color: #fff;
 }
 
-.add-pizza-button {
-    background-color: #003223;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-    .add-pizza-button:hover {
-        background-color: #00574b;
-    }
 /* Media query for mobile devices */
 @media only screen and (max-width: 600px) {
     .admin-panel {

@@ -1,0 +1,41 @@
+﻿@model SavorAsia.Models.Menu.ItemModel
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+    <link href="~/css/admin/adminadd.css" rel="stylesheet" />
+</head>
+
+
+<form asp-action="Edit" asp-controller="Admin" method="post">
+    <div class="admin-panel">
+        <h2> Admin Edit</h2>
+        @if (Model.Data != null && Model.Data.Length > 0)
+        {
+            string base64Image = Convert.ToBase64String(Model.Data);
+            string imageSource = string.Format("data:image/png;base64,{0}", base64Image);
+            <img src="@imageSource" class="pizza-image" style="width:400px;" />
+        }
+
+        <input type="hidden" asp-for="Id" /> <!-- Hidden field for PizzaId, required for model binding -->
+        <input type="hidden" asp-for="Data" /> <!-- Hidden field for PizzaId, required for model binding -->
+        <input type="hidden" asp-for="CategoryId" /> <!-- Hidden field for PizzaId, required for model binding -->
+
+        <div class="form-group">
+            <label for="pizza-name">Pizza Name</label>
+            <input type="text" asp-for="Name" placeholder="@Model.Name" style="width: 300px;">
+        </div>
+        <div class="form-group">
+            <label for="pizza-description">Description</label>
+            <textarea asp-for="Description" placeholder="@Model.Description" style="width: 340px;"></textarea>
+        </div>
+        <div class="form-group">
+            <label asp-for="Price">Price:$</label>
+            <input type="text" asp-for="Price" class="form-control" placeholder="@Model.Price" />
+        </div>
+
+        <button class="custombtn" value="Save">Save</button>
+        <button class="custombtn" onclick="return confirm('Are you sure you want to delete this product?')" class="add-button" asp-action="Delete" asp-controller="Admin">Delete</button>
+    </div>
+</form>
+
+
