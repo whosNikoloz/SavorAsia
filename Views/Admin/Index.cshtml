@@ -1,0 +1,224 @@
+﻿@model ItemViewModel
+@{
+    Layout = "_LayoutMenu";
+}
+
+
+<style>
+    .button-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .custombtn {
+        margin: 0 10px;
+        padding: 8px 25px;
+        border: unset;
+        border-radius: 15px;
+        color: #212121;
+        z-index: 1;
+        background: #e8e8e8;
+        position: relative;
+        font-weight: 1000;
+        font-size: 17px;
+        -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+        box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+        transition: all 250ms;
+        overflow: hidden;
+    }
+
+        .custombtn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            border-radius: 15px;
+            background-color: #212121;
+            z-index: -1;
+            -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+            box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+            transition: all 250ms
+        }
+
+        .custombtn:hover {
+            color: #e8e8e8;
+        }
+
+            .custombtn:hover::before {
+                width: 100%;
+            }
+</style>
+
+<main>
+    <section class="main-section">
+        <form asp-controller="Admin" asp-action="Index" method="get">
+            <div class="button-container">
+                <button class="custombtn" name="item" value="Noodles" type="submit">Noodles</button>
+                <button class="custombtn" name="item" value="Drinks" type="submit">Drinks</button>
+                <button class="custombtn" name="item" value="Ramen" type="submit">Ramen</button>
+                <button class="custombtn" name="item" value="Rice" type="submit">Rice</button>
+            </div>
+        </form>
+        <div class="product-container">
+            <div class="
+
+">
+                @if (Model.noodles != null)
+                {
+                    @foreach (var item in Model.noodles)
+                    {
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    @if (item.Data != null && item.Data.Length > 0)
+                                    {
+                                        string base64Image = Convert.ToBase64String(item.Data);
+                                        string imageSource = string.Format("data:image/png;base64,{0}", base64Image);
+                                        // <img src="@imageSource" />
+                                    }
+                                    <img src="/images/test.jpg">
+                                    <div class="product-over">
+                                        <button class="btn btn-small addToCart"
+                                                data-product-id="3">
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <a href="detail_page.html"
+                                           class="btn btn-small">More Info</a>
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">@item.Name</h4>
+                                    <span class="stars"></span>
+                                    <p>
+                                        @item.Description
+                                    </p>
+                                    <h6 class="price">
+                                        $<span class="priceValue">@item.Price</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+                @if (Model.ramen != null)
+                {
+                    <h3>Ramen</h3>
+                    @foreach (var item in Model.ramen)
+                    {
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    @if (item.Data != null && item.Data.Length > 0)
+                                    {
+                                        string base64Image = Convert.ToBase64String(item.Data);
+                                        string imageSource = string.Format("data:image/png;base64,{0}", base64Image);
+                                        <img src="@imageSource" />
+                                    }
+                                    <div class="product-over">
+                                        <button class="btn btn-small addToCart"
+                                                data-product-id="3">
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <a href="detail_page.html"
+                                           class="btn btn-small">More Info</a>
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">@item.Name</h4>
+                                    <span class="stars"></span>
+                                    <p>
+                                        @item.Description
+                                    </p>
+                                    <h6 class="price">
+                                        $<span class="priceValue">@item.Price</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+                @if (Model.drink != null)
+                {
+                    <h3>Drinks</h3>
+                    @foreach (var item in Model.drink)
+                    {
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img src="Images/producs-images/Laptops/laptop-3.png"
+                                         alt="popular labtops and computers" />
+                                    <div class="product-over">
+                                        <button class="btn btn-small addToCart"
+                                                data-product-id="3">
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <a href="detail_page.html"
+                                           class="btn btn-small">More Info</a>
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">Product 3</h4>
+                                    <span class="stars"></span>
+                                    <p>
+                                        @item.Description
+                                    </p>
+                                    <h6 class="price">
+                                        $<span class="priceValue">650</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+                @if (Model.rice != null)
+                {
+                    <h4>Rice</h4>
+                    @foreach (var item in Model.rice)
+                    {
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    @if (item.Data != null && item.Data.Length > 0)
+                                    {
+                                        string base64Image = Convert.ToBase64String(item.Data);
+                                        string imageSource = string.Format("data:image/png;base64,{0}", base64Image);
+                                        <img src="@imageSource" />
+                                    }
+                                    <div class="product-over">
+                                        <button class="btn btn-small 
+"
+                                                data-product-id="3">
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <a href="detail_page.html"
+                                           class="btn btn-small">More Info</a>
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">@item.Name</h4>
+                                    <span class="stars"></span>
+                                    <p>
+                                        @item.Description
+                                    </p>
+                                    <h6 class="price">
+                                        $<span class="priceValue">@item.Price</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </section>
+</main>

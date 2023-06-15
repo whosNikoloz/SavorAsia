@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]  SavorAsia</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/home/homeV2.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SavorAsia.styles.css" asp-append-version="true" />
+    <link href="~/css/menu/mainv8.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    @using Microsoft.AspNetCore.Identity
+    @inject SignInManager<IdentityUser> SignInManager
+    @inject UserManager<IdentityUser> UserManager
+</head>
+<body>
+    <nav>
+        <!--Navbar has two part the top one and the bottom one-->
+        <!--Here is top one and in this part I put logo, my account part, and the shopping cart-->
+        <div class="navbar-top">
+            <div>
+                <button id="menuButton"><i class=""></i></button>
+                <!--Logo-->
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <h2 class="logo">SavorAsia</h2>
+                </a>
+            </div>
+            <div>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <div class="account">
+                        <a asp-area="Identity" asp-page="/Account/Manage/Index">
+                            <button class="account-btn">
+                                <i class="fas fa-user-alt"></i>
+                            </button>
+                            <span class="account-text">My account</span>
+                        </a>
+                        <!--When we click the btnShowAccountInfo this section will be displayed-->
+                    </div>
+
+                    var user = await UserManager.GetUserAsync(User);
+                    @if (await UserManager.IsInRoleAsync(user, "Admin"))
+                    {
+                        // <li><a asp-area="" asp-controller="Admin" asp-action="Index">Admin</a></li>
+                        // <li><a asp-area="" asp-controller="Admin" asp-action="Orders">Orders</a></li>
+                    }
+                        <div class="shopping-cart">
+                            <div class="sum-prices">
+                                <!--Shopping cart logo-->
+                                <i class="fas fa-shopping-cart shoppingCartButton"></i>
+                                <!--The total prices of 
+
+                                in the shopping cart -->
+                                <h6 id="sum-prices"></h6>
+                            </div>
+                        </div>
+                }
+                else
+                {
+                    <div class="account">
+                        <a asp-area="Identity" asp-page="/Account/Register">
+                            <button class="account-btn">
+                                <i class="fas fa-user-alt"></i>
+                            </button>
+                            <span class="account-text">My account</span>
+                        </a>
+                        <!--When we click the btnShowAccountInfo this section will be displayed-->
+                    </div>
+                }
+
+           
+            
+            </div>
+        </div>
+       
+    </nav>
+
+    <main>
+        @RenderBody()
+        <footer class="footer">
+            <div class="waves">
+                <div class="wave" id="wave1"></div>
+                <div class="wave" id="wave2"></div>
+                <div class="wave" id="wave3"></div>
+                <div class="wave" id="wave4"></div>
+            </div>
+            <ul class="social-icon">
+                <li class="social-icon__item">
+                    <a class="social-icon__link" href="https://www.facebook.com/profile.php?id=100009152091053">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                </li>
+                <li class="social-icon__item">
+                    <a class="social-icon__link" href="https://twitter.com/home?lang=en">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                </li>
+                <li class="social-icon__item">
+                    <a class="social-icon__link" href="https://www.linkedin.com/in/nikoloz-kobaidze-298a35254/">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                </li>
+                <li class="social-icon__item">
+                    <a class="social-icon__link" href="https://www.instagram.com/kobaidze0/">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li class="menu__item"><a class="menu__link" href="#hero1">Home</a></li>
+                <li class="menu__item"><a class="menu__link" href="#hero3">About</a></li>
+                <li class="menu__item"><a class="menu__link" href="#hero2">Menu</a></li>
+                <li class="menu__item"><a class="menu__link" href="#hero5">Contact</a></li>
+
+            </ul>
+            <p>&copy;2023 Nikoloza | All Rights Reserved</p>
+        </footer>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </main>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

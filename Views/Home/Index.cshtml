@@ -1,0 +1,176 @@
+﻿@{
+    Layout = "_Layout";
+    
+}
+
+
+<link href="~/css/home/homeV2.css" rel="stylesheet" />
+<link href="~/css/home/caruselV4.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<link href="~/css/home/contactus.css" rel="stylesheet" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+    .custombtn a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+        .custombtn a:hover {
+            text-decoration: none;
+        }
+</style>
+
+
+<section id="hero1" data-aos="fade-up" data-aos-duration="2400">
+    <h1>Welcome</h1>
+</section>
+<section id="hero2" data-aos="fade-up" data-aos-duration="2000">
+    <div class="slider">
+        <form asp-controller="Home" asp-action="Menu" method="get">
+            <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav" />
+            <input type="radio" name="slider" title="slide2" class="slider__nav" />
+            <input type="radio" name="slider" title="slide3" class="slider__nav" />
+            <input type="radio" name="slider" title="slide4" class="slider__nav" />
+            <div class="slider__inner">
+                <div class="slider__contents">
+                    <button type="submit" name="item" value="Noodles"  style="border: none; background: none; padding: 0;">
+                        <img src="/images/menu(home)/NoodlesM.png" style="width: 400px;">
+                    </button>
+                    <h2 class="slider__caption">Noodles</h2>
+                </div>
+
+                <div class="slider__contents">
+                    <button type="submit" name="item" value="Rice" style="border: none; background: none; padding: 0;">
+                        <img src="/images/menu(home)/RiceM.png" style="width: 400px;">
+                    </button>
+                    <h2 class="slider__caption">Rice</h2>
+                </div>
+                <div class="slider__contents">
+                    <button type="submit" name="item" value="Ramen" style="border: none; background: none; padding: 0;">
+                        <img src="/images/menu(home)/RamenM.png" style="width: 400px;">
+                    </button>
+                    <h2 class="slider__caption">Soupe</h2>
+                </div>
+                <div class="slider__contents">
+                    <button type="submit" name="item" value="Drinks" style="border: none; background: none; padding: 0;">
+                        <img src="/images/menu(home)/DrinksM.png" style="width: 400px;">
+                    </button>
+                    <h2 class="slider__caption">Drinks</h2>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>
+
+
+<section data-aos="fade-up" data-aos-duration="2500" style="margin-top: 200px;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3586ff" fill-opacity="1" d="M0,224L40,202.7C80,181,160,139,240,149.3C320,160,400,224,480,229.3C560,235,640,181,720,133.3C800,85,880,43,960,64C1040,85,1120,171,1200,176C1280,181,1360,107,1400,69.3L1440,32L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+    <div class="findus" style="background-color:#3586ff">
+    <h1 class="section-title">Find Us</h1>
+
+        <div class="card-container">
+            <div class="card">
+                <img class="card-img-top" src="/images/index(home)/restaurant1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">SavorAsia</h5>
+                    <p class="card-text">Green Zone near Lisi Lake</p>
+                    <button class="custombtn">
+                        <a href="https://goo.gl/maps/xA2Zvm8dc3qKsNp88">Go</a>
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="/images/index(home)/restaurant3.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">SavorAsia</h5>
+                    <p class="card-text">77a Merab Kostava St, T'bilisi</p>
+                    <button class="custombtn">
+                        <a href="https://goo.gl/maps/LRJWvy827m3jYorH8">Go</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="card-container">
+            <div class="card">
+                <img class="card-img-top" src="/images/index(home)/restaurant1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">SavorAsia</h5>
+                    <p class="card-text">Qvemo Ponichala, Tbilisi</p>
+                    <button class="custombtn">
+                        <a href="https://goo.gl/maps/YvUhbWCNP6HpyPp86">Go</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3586ff" fill-opacity="1" d="M0,192L40,170.7C80,149,160,107,240,85.3C320,64,400,64,480,74.7C560,85,640,107,720,122.7C800,139,880,149,960,144C1040,139,1120,117,1200,96C1280,75,1360,53,1400,42.7L1440,32L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
+</section>
+
+<section id="hero4" data-aos="fade-up" data-aos-duration="2700">
+    <h1 style="margin-top: 200px;">About Us</h1>
+    <img src="/images/Aboutimg.png">
+    <p>
+        Experience the essence of Asia at SavorAsia. Indulge in vibrant flavors, from sushi rolls to fragrant curries,
+        meticulously crafted using the finest ingredients. Join us for an exquisite dining experience inspired by the culinary
+        traditions of China, Japan, Thailand, India,and more. Discover the magic of SavorAsia, where every bite is an invitation to savor Asia's captivating cuisine.
+    </p>
+</section>
+<section id="hero5" data-aos="fade-up" data-aos-duration="2000">
+    <div class="background" style="margin-top: 200px;">
+        <div class="container">
+            <div class="screen">
+                <div class="screen-header">
+                    <div class="screen-header-left">
+                        <div class="screen-header-button close"></div>
+                        <div class="screen-header-button maximize"></div>
+                        <div class="screen-header-button minimize"></div>
+                    </div>
+                    <div class="screen-header-right">
+                        <div class="screen-header-ellipsis"></div>
+                        <div class="screen-header-ellipsis"></div>
+                        <div class="screen-header-ellipsis"></div>
+                    </div>
+                </div>
+                <div class="screen-body">
+                    <div class="screen-body-item left">
+                        <div class="app-title">
+                            <span>CONTACT</span>
+                            <span>US</span>
+                        </div>
+                        <div class="app-contact">CONTACT INFO : +995 577 602 399</div>
+                    </div>
+                    <div class="screen-body-item">
+                        <div class="app-form">
+                            <div class="app-form-group">
+                                <input class="app-form-control" placeholder="NAME">
+                            </div>
+                            <div class="app-form-group">
+                                <input class="app-form-control" placeholder="EMAIL">
+                            </div>
+                            <div class="app-form-group">
+                                <input class="app-form-control" placeholder="CONTACT NO" value="SavorAsia@gmail.com" readonly>
+                            </div>
+                            <div class="app-form-group message">
+                                <input class="app-form-control" placeholder="MESSAGE">
+                            </div>
+                            <div class="app-form-group buttons">
+                                <button class="app-form-button">CANCEL</button>
+                                <button class="app-form-button">SEND</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
