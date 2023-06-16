@@ -33,8 +33,8 @@
       "PackagePath": "staticwebassets\\css\\manageacc.css"
     },
     {
-      "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\css\\menu\\mainV9.css",
-      "PackagePath": "staticwebassets\\css\\menu\\mainV9.css"
+      "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\css\\menu\\navbar.css",
+      "PackagePath": "staticwebassets\\css\\menu\\navbar.css"
     },
     {
       "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\css\\menu\\product.css",
@@ -71,6 +71,14 @@
     {
       "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\images\\index(home)\\restaurant3.jpg",
       "PackagePath": "staticwebassets\\images\\index(home)\\restaurant3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\images\\index(home)\\waveDown.png",
+      "PackagePath": "staticwebassets\\images\\index(home)\\waveDown.png"
+    },
+    {
+      "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\images\\index(home)\\waveUp.png",
+      "PackagePath": "staticwebassets\\images\\index(home)\\waveUp.png"
     },
     {
       "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\images\\menu(home)\\DrinksM.png",

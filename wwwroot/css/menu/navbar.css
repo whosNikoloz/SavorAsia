@@ -102,6 +102,7 @@ nav .navbar-top {
     align-items: center;
     justify-content: center;
     height: 60px;
+    gap:15px;
 }
 
 /* My account text*/

@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/home/home.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SavorAsia.styles.css" asp-append-version="true" />
-    <link href="~/css/menu/mainv9.css" rel="stylesheet" />
-
+    <link href="~/css/menu/navbar.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
     @using Microsoft.AspNetCore.Identity
@@ -44,8 +43,14 @@
                     var user = await UserManager.GetUserAsync(User);
                     @if (await UserManager.IsInRoleAsync(user, "Admin"))
                     {
-                        // <li><a asp-area="" asp-controller="Admin" asp-action="Index">Admin</a></li>
-                        // <li><a asp-area="" asp-controller="Admin" asp-action="Orders">Orders</a></li>
+                        <div class="account">
+                            <a asp-action="index" asp-controller="admin">
+                                <button class="account-btn">
+                                    <i class="fas fa-user-cog"></i>
+                                </button>
+                                <span class="account-text">Admin</span>
+                            </a>
+                        </div>
                     }
                         <div class="shopping-cart">
                             <div class="sum-prices">
