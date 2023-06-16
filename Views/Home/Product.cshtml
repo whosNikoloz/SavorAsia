@@ -1,11 +1,19 @@
 ﻿@{
     Layout = "_LayoutMenu";
     decimal price = Model.Price + 6;
+    string imageSource = "";
 }
 <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 <link href="~/css/menu/product.css" rel="stylesheet" />
 @model SavorAsia.Models.Menu.ItemModel
 
+
+@if (Model.Data != null && Model.Data.Length > 0)
+{
+    string base64Image = Convert.ToBase64String(Model.Data);
+    imageSource = string.Format("data:image/png;base64,{0}", base64Image);
+    
+}
 
 
 <div class="container">
@@ -14,12 +22,7 @@
             <div class="col-6">
                 <div class="product-imageP">
                     <div class="product-imageP-main">
-                        @if (Model.Data != null && Model.Data.Length > 0)
-                        {
-                            string base64Image = Convert.ToBase64String(Model.Data);
-                            string imageSource = string.Format("data:image/png;base64,{0}", base64Image);
-                            <img src="@imageSource" />
-                        }
+                        <img src="@imageSource" />
                     </div>
                 </div>
             </div>
@@ -68,8 +71,11 @@
                     <div class="product-btn-group">
                         <div class="button buy-now"><i class='bx bxs-zap'></i> Buy Now</div>
                         <button class="button add-cart addToCart"
-                                data-product-id="@Model.Id"
-                                data-category-id="@Model.CategoryId">
+                                data-id="@Model.Id"
+                                data-category-id="@Model.CategoryId"
+                                data-name="@Model.Name"
+                                data-price="@Model.Price"
+                                data-image="@imageSource">
                             <i class="bx bxs-cart"></i>Add to cart
                         </button>
                     </div>

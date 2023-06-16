@@ -73,14 +73,6 @@
       "PackagePath": "staticwebassets\\images\\index(home)\\restaurant3.jpg"
     },
     {
-      "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\images\\index(home)\\waveDown.png",
-      "PackagePath": "staticwebassets\\images\\index(home)\\waveDown.png"
-    },
-    {
-      "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\images\\index(home)\\waveUp.png",
-      "PackagePath": "staticwebassets\\images\\index(home)\\waveUp.png"
-    },
-    {
       "Id": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\images\\menu(home)\\DrinksM.png",
       "PackagePath": "staticwebassets\\images\\menu(home)\\DrinksM.png"
     },

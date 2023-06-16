@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hzrndMG53ccEbTfaJXK1Sb2xglW1db9W3AVSb7l2wyM=",
+  "Hash": "amgegO1REWTGmM5xu/9tyxZn14+2p28S0FlaNyW+w0Q=",
   "Source": "SavorAsia",
   "BasePath": "_content/SavorAsia",
   "Mode": "Default",
@@ -1324,40 +1324,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\index(home)\\restaurant3.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\images\\index(home)\\waveDown.png",
-      "SourceId": "SavorAsia",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\",
-      "BasePath": "_content/SavorAsia",
-      "RelativePath": "images/index(home)/waveDown.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\index(home)\\waveDown.png"
-    },
-    {
-      "Identity": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\images\\index(home)\\waveUp.png",
-      "SourceId": "SavorAsia",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\",
-      "BasePath": "_content/SavorAsia",
-      "RelativePath": "images/index(home)/waveUp.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\index(home)\\waveUp.png"
     },
     {
       "Identity": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\images\\index(home)\\WelcomeBG.png",

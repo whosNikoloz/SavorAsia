@@ -231,7 +231,7 @@ namespace SavorAsia.Controllers
                     };
                     return View(Noodlemodel);
                 case 1:
-                    var rice = db.Noodles.Find(productid);
+                    var rice = db.Rice.Find(productid);
                     var Ricemodel = new ItemModel
                     {
                         Price = rice.Price,
@@ -243,7 +243,7 @@ namespace SavorAsia.Controllers
                     };
                     return View(Ricemodel);
                 case 2:
-                    var drink = db.Noodles.Find(productid);
+                    var drink = db.Drinks.Find(productid);
                     var Drinkmodel = new ItemModel
                     {
                         Price = drink.Price,
@@ -255,7 +255,7 @@ namespace SavorAsia.Controllers
                     };
                     return View(Drinkmodel);
                 case 3:
-                    var ramen = db.Noodles.Find(productid);
+                    var ramen = db.Ramen.Find(productid);
                     var Ramenmodel = new ItemModel
                     {
                         Price = ramen.Price,
