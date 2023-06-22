@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rxjmnfKC7Vp2PylECJGThPZBwjWXLO4kQX+ybl2oMerctsChPYf3dOarPodMoA2hmfkJWrcvtVRc44xd532Xmg==",
+  "dgSpecHash": "VVKMOo7PaUQDWe8GfjMfCOhnIyI2VhdJ5K+maP1cqY1FKk62PVVDsDXWz5MpBZAwqCo/b9yllfsdKR25yWwFag==",
   "success": true,
   "projectFilePath": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\SavorAsia.csproj",
   "expectedPackageFiles": [
@@ -192,11 +192,7 @@
     "C:\\Users\\nikol\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\nikol\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\nikol\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\nikol\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\nikol\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\nikol\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\nikol\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\nikol\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.16\\microsoft.netcore.app.host.win-x64.6.0.16.nupkg.sha512"
+    "C:\\Users\\nikol\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
