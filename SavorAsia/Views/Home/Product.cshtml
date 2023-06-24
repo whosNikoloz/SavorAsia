@@ -1,0 +1,80 @@
+﻿@{
+    Layout = "_LayoutMenu";
+    decimal price = Model.Price + 6;
+}
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+<link href="~/css/menu/product.css" rel="stylesheet" />
+@model SavorAsia.Models.Menu.ItemModel
+
+
+
+<div class="container">
+    <div class="single-product">
+        <div class="row">
+            <div class="col-6">
+                <div class="product-imageP">
+                    <div class="product-imageP-main">
+                        @if (Model.Data != null && Model.Data.Length > 0)
+                        {
+                            string base64Image = Convert.ToBase64String(Model.Data);
+                            string imageSource = string.Format("data:image/png;base64,{0}", base64Image);
+                            <img src="@imageSource" />
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="breadcrumb">
+                    <span><a href="#">Menu</a></span>
+                    <span><a href="#">Name</a></span>
+                    <span class="active">@Model.Name</span>
+                </div>
+
+                <div class="product">
+                    <div class="product-title">
+                        <h2>@Model.Name</h2>
+                    </div>
+                    <div class="product-rating">
+                        <span><i class="bx bxs-star"></i></span>
+                        <span><i class="bx bxs-star"></i></span>
+                        <span><i class="bx bxs-star"></i></span>
+                        <span><i class="bx bxs-star"></i></span>
+                        <span><i class="bx bxs-star"></i></span>
+                        <span class="review">(47 Review)</span>
+                    </div>
+                    <div class="product-price">
+                        <h4 class="productName" style="display:none">@Model.Name</h4>
+
+
+                        <span class="offer-price">$@Model.Price</span>
+
+
+                        
+                        <h6 class="price" style="display:none">
+                            $<span class="priceValue">@Model.Price</span>
+                        </h6>
+
+
+
+                        <span class="sale-price">$@price</span>
+                    </div>
+
+                    <div class="product-details">
+                        <h3>Description</h3>
+                        <p>@Model.Description</p>
+                    </div>
+                    <span class="divider"></span>
+
+                    <div class="product-btn-group">
+                        <div class="button buy-now"><i class='bx bxs-zap'></i> Buy Now</div>
+                        <button class="button add-cart addToCart"
+                                data-product-id="@Model.Id"
+                                data-category-id="@Model.CategoryId">
+                            <i class="bx bxs-cart"></i>Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

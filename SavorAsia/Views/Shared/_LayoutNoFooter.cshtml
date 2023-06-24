@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]  SavorAsia</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/home/home.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SavorAsia.styles.css" asp-append-version="true" />
+    <link href="~/css/menu/mainv8.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    @using Microsoft.AspNetCore.Identity
+    @inject SignInManager<IdentityUser> SignInManager
+    @inject UserManager<IdentityUser> UserManager
+</head>
+<body>
+    <nav>
+        <!--Navbar has two part the top one and the bottom one-->
+        <!--Here is top one and in this part I put logo, my account part, and the shopping cart-->
+        <div class="navbar-top">
+            <div>
+                <button id="menuButton"><i class=""></i></button>
+                <!--Logo-->
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <h2 class="logo">SavorAsia</h2>
+                </a>
+            </div>
+            <div>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <div class="account">
+                        <a asp-area="Identity" asp-page="/Account/Manage/Index">
+                            <button class="account-btn">
+                                <i class="fas fa-user-alt"></i>
+                            </button>
+                            <span class="account-text">My account</span>
+                        </a>
+                        <!--When we click the btnShowAccountInfo this section will be displayed-->
+                    </div>
+
+                    var user = await UserManager.GetUserAsync(User);
+                    @if (await UserManager.IsInRoleAsync(user, "Admin"))
+                    {
+                        // <li><a asp-area="" asp-controller="Admin" asp-action="Index">Admin</a></li>
+                        // <li><a asp-area="" asp-controller="Admin" asp-action="Orders">Orders</a></li>
+                    }
+                        <div class="shopping-cart">
+                            <div class="sum-prices">
+                                <!--Shopping cart logo-->
+                                <i class="fas fa-shopping-cart shoppingCartButton"></i>
+                                <!--The total prices of products in the shopping cart -->
+                                <h6 id="sum-prices"></h6>
+                            </div>
+                        </div>
+                }
+                else
+                {
+                    <div class="account">
+                        <a asp-area="Identity" asp-page="/Account/Register">
+                            <button class="account-btn">
+                                <i class="fas fa-user-alt"></i>
+                            </button>
+                            <span class="account-text">My account</span>
+                        </a>
+                        <!--When we click the btnShowAccountInfo this section will be displayed-->
+                    </div>
+                }
+            </div>
+        </div>
+    </nav>
+    <main>
+        @RenderBody()
+    </main>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

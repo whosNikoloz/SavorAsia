@@ -1,0 +1,130 @@
+﻿@model SavorAsia.Models.Menu.ItemModel
+
+
+@{
+    Layout = "_LayoutNoFooter";
+}
+
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+    <link rel="stylesheet" href="/css/adminaddV2.css">
+    <link href="c:\users\nikol\source\repos\savorasia\savorasia\wwwroot\css\adminaddv2.css" rel="stylesheet" />
+</head>
+<form method="post" enctype="multipart/form-data">
+    <div class="admin-panel">
+        <h2>დაამატე Pizza</h2>
+        <form>
+            <div class="form-group">
+                <label for="pizza-img">პიცის ფოტო</label>
+                <input type="file" name="image" id="image" style="width: 300px" accept="image/*" onchange="previewImage(event)">
+                <img id="preview" src="" alt="Preview" style="width: 300px" />
+                <span id="image-error" style="color: red;"></span>
+            </div>
+            <div class="form-group">
+                <label for="pizza-name">პიცის სახელი</label>
+                <input type="text" name="Name" id="Name" required style="width: 300px;">
+            </div>
+            <div class="form-group">
+                <label for="pizza-price">პიცის ფასი</label>
+                <input type="text" name="Price" id="Price" required style="width: 100px;">
+            </div>
+
+            <div class="form-group">
+                <label for="pizza-description">აღწერა</label>
+                <textarea name="Description" id="Description" required style="width: 340px;"></textarea>
+            </div>
+
+            <select id="item" name="item" style="width: 200px;">
+                <option value=0>Noodles</option>
+                <option value=2>Drinks</option>
+                <option value=1>Rice</option>
+                <option value=3>Ramen</option>
+            </select>
+            
+            <button class="add-pizza-button">დამატება</button>
+        </form>
+    </div>
+</form>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function (event) {
+        var imageInput = document.getElementById('image');
+        var previewImage = document.getElementById('preview');
+        var imageError = document.getElementById('image-error');
+        var isValid = true;
+
+        if (!imageInput.files || !imageInput.files[0]) {
+            isValid = false;
+            imageError.textContent = 'Please select an image.';
+        } else {
+            imageError.textContent = '';
+            // You can perform additional validation here if needed
+        }
+
+        if (!isValid) {
+            event.preventDefault(); // Prevents form submission
+        }
+    });
+
+
+
+    document.querySelector('form').addEventListener('submit', function (event) {
+        var inputs = this.querySelectorAll('input[required]');
+        var isValid = true;
+
+        for (var i = 0; i < inputs.length; i++) {
+            if (!inputs[i].value) {
+                isValid = false;
+                inputs[i].classList.add('error');
+            } else {
+                inputs[i].classList.remove('error');
+            }
+        }
+
+        if (!isValid) {
+            event.preventDefault(); // Prevents form submission
+            alert('Please fill in all the required fields.');
+        }
+    });
+
+
+
+    function previewImage(event) {
+        const input = event.target;
+        const preview = document.getElementById('preview');
+
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+        else {
+            preview.src = '#';
+        }
+
+    }
+</script>
+
+
+
+
+
+
+<script>
+
+    function updateCheeseType() {
+        const inputElement = document.getElementById("CheeseType");
+        const checkboxElement = document.getElementById("CheeseTypeCheckbox");
+
+        if (checkboxElement.checked) {
+            inputElement.value = ""; // or some other default value
+        } else if (!inputElement.value) {
+            inputElement.value = "არა";
+        }
+    }
+</script>

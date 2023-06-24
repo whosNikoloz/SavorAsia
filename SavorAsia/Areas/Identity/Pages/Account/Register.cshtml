@@ -1,0 +1,68 @@
+﻿@page
+@model RegisterModel
+
+@{
+    Layout = "_LayoutNoFooter";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+<link href="~/css/loginV1.css" rel="stylesheet" />
+
+
+<section id="hero">
+    <div class="main_div">
+        <div class="title">Sign Up</div>
+        <div class="social_icons">
+            <a href="#"><i class="fab fa-facebook-f"></i> <span>Facebook</span></a>
+            <a href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+        </div>
+        <form id="account" method="post">
+            <div class="input_box">
+                <input type="text" asp-for="Input.Email" aria-required="true" placeholder="Email" required>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                <div class="icon"><i class="fas fa-user"></i></div>
+            </div>
+            <div class="input_box">
+                <input type="text" asp-for="Input.UserName" aria-required="true" placeholder="UserName" required>
+                <span asp-validation-for="Input.UserName" class="text-danger"></span>
+                <div class="icon"><i class="fas fa-user"></i></div>
+            </div>
+            <div class="input_box">
+                <input type="password" asp-for="Input.Password" autocomplete="new-password aria-required="true" placeholder="Password" required>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                <div class="icon"><i class="fas fa-lock"></i></div>
+            </div>
+            <div class="input_box">
+                <input type="password" asp-for="Input.ConfirmPassword" autocomplete="new-password aria-required="true" placeholder="Password" required>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                <div class="icon"><i class="fas fa-lock"></i></div>
+            </div>
+            <div class="option_div">
+            </div>
+            <div class="input_box button">
+                <input type="submit" id="login-submit" value="Register">
+            </div>
+            
+            <div class="sign_up">
+                Member? <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Sign In</a>
+            </div>
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach (var modelError in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <li>@modelError.ErrorMessage</li>
+                        }
+                    </ul>
+                </div>
+            }
+        </form>
+    </div>
+</section>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
