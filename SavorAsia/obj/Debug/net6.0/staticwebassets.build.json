@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YY3VLpIXLNWfc9TJQfnxrr8wcnCSn1eXhoE09xt8AXE=",
+  "Hash": "6voYb5u8vsDdBq/DPsOL79q/6tehSypBEq/6Ckjuw6k=",
   "Source": "SavorAsia",
   "BasePath": "_content/SavorAsia",
   "Mode": "Default",
@@ -1190,12 +1190,12 @@
       "OriginalItemSpec": "wwwroot\\css\\manageacc.css"
     },
     {
-      "Identity": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\css\\menu\\mainV8.css",
+      "Identity": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\css\\menu\\mainCSS.css",
       "SourceId": "SavorAsia",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\",
       "BasePath": "_content/SavorAsia",
-      "RelativePath": "css/menu/mainV8.css",
+      "RelativePath": "css/menu/mainCSS.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1204,7 +1204,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\menu\\mainV8.css"
+      "OriginalItemSpec": "wwwroot\\css\\menu\\mainCSS.css"
     },
     {
       "Identity": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\css\\menu\\product.css",
@@ -1324,6 +1324,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\index(home)\\WelcomeBG.png"
+    },
+    {
+      "Identity": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\images\\logo.png",
+      "SourceId": "SavorAsia",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\",
+      "BasePath": "_content/SavorAsia",
+      "RelativePath": "images/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
       "Identity": "C:\\Users\\nikol\\source\\repos\\SavorAsia\\SavorAsia\\wwwroot\\images\\menu(home)\\DrinksM.png",

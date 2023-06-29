@@ -39,6 +39,8 @@
             <div class="sign_up">
                 Not a member? <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">SignUp Now</a>
             </div>
+            <hr />
+            <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
             @if (!ViewData.ModelState.IsValid)
             {
                 <div class="alert alert-danger">
